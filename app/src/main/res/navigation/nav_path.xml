@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_path"
+            app:startDestination="@id/film_listesi">
+
+    <fragment android:id="@+id/film_listesi" android:name="com.busra.moveapplication.film_listesi"
+              android:label="fragment_film_listesi" tools:layout="@layout/fragment_film_listesi">
+        <action android:id="@+id/action_film_listesi_to_film_ekle" app:destination="@id/film_ekle"/>
+    </fragment>
+    <fragment android:id="@+id/film_ekle" android:name="com.busra.moveapplication.film_ekle"
+              android:label="fragment_film_ekle" tools:layout="@layout/fragment_film_ekle">
+        <action android:id="@+id/action_film_ekle_to_film_listesi" app:destination="@id/film_listesi"/>
+        <argument android:name="bilgi" app:argType="string" android:defaultValue="menudengeldim"/>
+        <argument android:name="id" app:argType="integer" android:defaultValue="0"/>
+    </fragment>
+</navigation>
